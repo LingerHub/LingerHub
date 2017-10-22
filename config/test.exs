@@ -17,3 +17,10 @@ config :lingerhub, Lingerhub.Repo,
   database: "lingerhub_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+# Override configuration locally
+case File.exists?("config/test.secret.exs") do
+  true -> import_config "test.secret.exs"
+  false -> nil
+end
+
