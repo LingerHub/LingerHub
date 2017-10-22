@@ -11,7 +11,7 @@ config :lingerhub, LingerhubWeb.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
-  watchers: []
+  watchers: [yarn: ["start", cd: Path.expand("../assets", __DIR__)]]
 
 # ## SSL Support
 #
@@ -33,7 +33,7 @@ config :lingerhub, LingerhubWeb.Endpoint,
 config :lingerhub, LingerhubWeb.Endpoint,
   live_reload: [
     patterns: [
-      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
+      ~r{assets/src/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/gettext/.*(po)$},
       ~r{lib/lingerhub_web/views/.*(ex)$},
       ~r{lib/lingerhub_web/templates/.*(eex)$}
