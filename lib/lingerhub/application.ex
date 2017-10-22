@@ -1,4 +1,7 @@
 defmodule Lingerhub.Application do
+    @moduledoc """
+  LingerHub chat application
+  """
   use Application
 
   # See https://hexdocs.pm/elixir/Application.html
