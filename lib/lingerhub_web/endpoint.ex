@@ -3,13 +3,13 @@ defmodule LingerhubWeb.Endpoint do
 
   socket "/socket", LingerhubWeb.UserSocket
 
-  # Serve at "/" the static files from "priv/static" directory.
+  # Serve at "/" the static files from "assets/build" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :lingerhub, gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    at: "/", from: "assets/build/", gzip: false,
+    only: ~w(index.html static favicon.ico robots.txt service-worker.js)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
